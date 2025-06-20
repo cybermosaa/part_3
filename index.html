@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MeRevive Thrift - Sustainable fashion with preloved, timeless wardrobe pieces. Every purchase helps reduce textile waste. Shop our curated collection of vintage and second-hand clothing.">
+    <meta name="keywords" content="thrift store, sustainable fashion, second-hand clothing, vintage clothes, eco-friendly shopping, preloved fashion">
+    <meta name="author" content="MeRevive Thrift">
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="MeRevive Thrift | Preloved, Timeless Wardrobe">
+    <meta property="og:description" content="Sustainable fashion with preloved, timeless wardrobe pieces. Every purchase helps reduce textile waste.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.merevivethrift.com">
+    <meta property="og:image" content="https://www.merevivethrift.com/images/social-preview.jpg">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Home | MeRevive Thrift - Sustainable Preloved Fashion</title>
+</head>
+
+<body> 
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Enhanced Navigation with Mobile Menu -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <div class="brand-name">
+                <a href="index.html">MeRevive Thrift</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="collection.html">The Collection</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="contactUs.html">Enquire</a></li>
+                <li><a href="lookbook.html">Styling</a></li>
+                <li><a href="care.html">Care Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>MEREVIVE THRIFT</h1>
+            <p class="tagline">Preloved, Timeless Wardrobe</p>
+            <p class="mission">Every Purchase Helps Reduce Waste, Shop Sustainably</p>
+            <a href="collection.html" class="cta-button">Shop Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/clothingrack-1.jpeg" alt="Curated collection of sustainable thrift clothing on a rack" width="1432" height="650">
+        </div>
+    </header>
+
+    <main id="main-content" class="gallery-container">
+        <!-- Search and Filter Section -->
+        <div class="search-filter-container">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search by tags (e.g. 'jacket', 'denim')" aria-label="Search collection">
+                <button id="searchButton" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-container">
+                <select id="categoryFilter" aria-label="Filter by category">
+                    <option value="all">All Categories</option>
+                    <option value="headwear">Headwear</option>
+                    <option value="bags">Bags</option>
+                    <option value="bottoms">Bottoms</option>
+                    <option value="footwear">Footwear</option>
+                    <option value="jackets">Jackets</option>
+                </select>
+                <select id="priceFilter" aria-label="Filter by price">
+                    <option value="all">Any Price</option>
+                    <option value="0-20">R60 - R100</option>
+                    <option value="20-40">R110 - R180</option>
+                    <option value="40-60">R200 - R300</option>
+                    <option value="60+">R350+</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div class="gallery-loading" id="loadingState">
+            <div class="loading-spinner"></div>
+            <p>Loading Collection...</p>
+        </div>
+
+        <div class="gallery-grid" id="gallery">
+        </div>
+
+
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox hidden" aria-modal="true" role="dialog" aria-label="Image Preview">
+        <button id="closeBtn" class="lightbox-close" aria-label="Close preview">&times;</button>
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="Zoomed view of selected item" class="lightbox-image">
+            <div class="lightbox-details">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxPrice"></p>
+                <p id="lightboxDescription"></p>
+                <button class="lightbox-add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <button id="prevItem" class="lightbox-nav" aria-label="Previous item"><i class="fas fa-chevron-left"></i></button>
+        <button id="nextItem" class="lightbox-nav" aria-label="Next item"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Newsletter Signup Modal -->
+    <div id="newsletterModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Join Our Sustainable Fashion Community</h2>
+            <p>Get 10% off your first purchase and updates on new arrivals!</p>
+            <form id="newsletterForm">
+                <input type="email" id="newsletterEmail" placeholder="Your email address" required aria-label="Email address">
+                <button type="submit">Subscribe</button>
+                <div class="form-message" id="newsletterMessage"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enhanced Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="care.html">Care Guide</a></li>
+                    <li><a href="contactUs.html">Contact</a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Mission</h3>
+                <p>Reducing textile waste by giving preloved clothing a new life through sustainable fashion practices.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form id="footerNewsletter">
+                    <input type="email" placeholder="Your email" aria-label="Email for newsletter">
+                    <button type="submit">Follow</button>
+                </form>
+                <p>Get updates on new arrivals and exclusive deals.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> MeRevive Thrift. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

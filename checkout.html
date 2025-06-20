@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your purchase at MeRevive Thrift - Sustainable fashion checkout">
+    <meta name="keywords" content="thrift store checkout, sustainable fashion purchase, eco-friendly shopping cart">
+    <title>Shopping Cart | MeRevive Thrift</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVIGATION TEMPLATE IMPLEMENTATION -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-container">
+            <div class="brand-name">
+                <a href="index.html">MeRevive Thrift</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="navMenu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collection.html">The Collection</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="checkout.html" class="active">Checkout</a></li>
+                <li><a href="contactUs.html">Enquire</a></li>
+                <li><a href="lookbook.html">Styling</a></li>
+                <li><a href="care.html">Care Guide</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CHECKOUT PAGE CONTENT -->
+    <section class="my-heading"> 
+        <h2>MEREVIVE THRIFT</h2>
+        <p>Preloved, Timeless Wardrobe</p>
+    </section>
+  
+    <section class="my-checkout">
+        <h2>Sign Up to Checkout</h2>
+        <form class="checkout-form">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" placeholder="Your first name" required>
+        
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" placeholder="Your last name" required>
+        
+            <label for="address">Address</label>
+            <input type="text" id="address" placeholder="Shipping address" required>
+        
+            <label for="city">City</label>
+            <input type="text" id="city" placeholder="Your city" required>
+        
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" placeholder="Phone number" required>
+        
+            <label class="checkbox-label">
+                <input type="checkbox"> Text me with new arrivals
+            </label>
+        
+            <button type="submit">Proceed to Checkout</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; <span id="currentYear"></span> MeRevive Thrift. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" title="Go to top">↑</button>
+</body>
+</html>

@@ -109,9 +109,16 @@ function resizeGridItem(item){
   item.style.gridRowEnd = "span " + rowSpan;
 
 }
-window.addEventListener("resize", () => {
-  allItems.forEach(item => resizeGridItem(item));
-});
+
+function resizeAllGridItems(){
+  const allItems = document.querySelectorAll(".my-looks-items");
+  for (let i=0, i < allItems.length; i++){
+    resizeGridItem(allItems[i]);
+  }
+}      
+window.addEventListener("load", resizeAllGridItems);
+window.addEventListener("resize", resizeAllGridItems);
+
 
 
 

@@ -95,3 +95,10 @@ function scrollFunction() {
   }
 }
 
+document.getElementById("backToTop").addEventListener("click", function(){
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
+
+
+

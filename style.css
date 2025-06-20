@@ -1699,6 +1699,12 @@ margin-left: 2rem;
  .care-card video{
     transition: transform 0.3s ease;
  }
+ 
+ .my-looks-items:hover img,
+ .care-card:hover video {
+    transform: scale(1.05);
+ }
+
 .page-header {
    text-align: center;
    padding: 3rem 2rem;

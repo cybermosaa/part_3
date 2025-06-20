@@ -112,14 +112,18 @@ function resizeGridItem(item){
 
 function resizeAllGridItems(){
   const allItems = document.querySelectorAll(".my-looks-items");
-  for (let i=0, i < allItems.length; i++){
+  for (let i=0; i < allItems.length; i++){
     resizeGridItem(allItems[i]);
   }
-}      
+}
 window.addEventListener("load", resizeAllGridItems);
 window.addEventListener("resize", resizeAllGridItems);
 
-
+// Enquiry
+document.getElementById('enquiryForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('Thank for the enquiry! we will get in touch soon.');
+})
 
 
 

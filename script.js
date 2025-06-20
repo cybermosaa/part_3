@@ -146,4 +146,12 @@ document.getElementById("backToTop").addEventListener("click", function() {
  });
  });
 
+console.log("Script connected successfully!");
+
+// jQuery test
+$(document).ready(function () {
+  console.log("jQuery is working!");
+});
+
+
 

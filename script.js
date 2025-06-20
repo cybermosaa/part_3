@@ -85,5 +85,6 @@ document.getElementById('backToTop').addEventListener('click', function() {
   }
  });
  
-
+// Back to top
+window.onscroll = function () {scrollFunction()};
 

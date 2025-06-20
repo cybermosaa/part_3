@@ -100,5 +100,15 @@ document.getElementById("backToTop").addEventListener("click", function(){
   document.documentElement.scrollTop = 0;
 });
 
+// Layout
+function resizeGridItem(item){
+  const grid = document.querySelector(".my-looks");
+  const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+  const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+  const rowSpan = Math.ceil((item.querySelector('img').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+  item.style.gridRowEnd = "span " + rowSpan;
+
+}
+
 
 

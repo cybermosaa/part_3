@@ -109,6 +109,10 @@ function resizeGridItem(item){
   item.style.gridRowEnd = "span " + rowSpan;
 
 }
+window.addEventListener("resize", () => {
+  allItems.forEach(item => resizeGridItem(item));
+});
+
 
 
 

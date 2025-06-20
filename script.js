@@ -125,5 +125,14 @@ document.getElementById('enquiryForm').addEventListener('submit', function(e){
   alert('Thank for the enquiry! we will get in touch soon.');
 })
 
+// Care Guide
+window.onscroll = function() {scrollFunction()};
+function scrollFunction(){
+  if (document.body.scroll > 300 || document.documentElement.scrollTop > 300){
+    document.getElementById("backToTop").style.display = "block";
+  } else {
+    document.getElementById("backToTop").style.display = "none";
+  }
+}
 
 

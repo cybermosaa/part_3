@@ -134,5 +134,11 @@ function scrollFunction(){
     document.getElementById("backToTop").style.display = "none";
   }
 }
+document.getElementById("backToTop").addEventListener("click", function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+ });
+ });
 
 

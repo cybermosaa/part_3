@@ -1674,11 +1674,17 @@ margin-left: 2rem;
   
 .care-card video {
   aspect-ratio: 4 / 5;
-  
-  width: 100%;
+  object-fit: cover;
+  width: 290px;
   height: auto;
   display: block;
   border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.care-card {
+  grid-row-end: span 2;
+  align-self: start;
 }
 
 .my-looks-items img,

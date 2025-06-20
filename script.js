@@ -1,131 +1,89 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functionality
-    initGallery();
-    initLightbox();
-    initSearch();
-    initBackToTop();
-    initInteractiveElements();
+// Mobile menu toggle
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('show');
 });
 
-// Gallery Functionality
-function initGallery() {
-    const gallery = document.getElementById('gallery');
-    const images = [
-        { src: 'images/example1.jpg', alt: 'Vintage denim jacket', tags: 'denim jacket vintage' },
-        { src: 'images/example2.jpg', alt: 'Floral summer dress', tags: 'dress floral summer' },
-        // Add more images with tags as needed
-    ];
-
-    function loadGallery(query = '') {
-        gallery.innerHTML = '';
-        const filtered = query ? 
-            images.filter(img => img.tags.includes(query.toLowerCase())) : 
-            images;
-
-        filtered.forEach(img => {
-            const imgElement = document.createElement('img');
-            imgElement.src = img.src;
-            imgElement.alt = img.alt;
-            imgElement.classList.add('gallery-item');
-            imgElement.setAttribute('data-tags', img.tags);
-            imgElement.addEventListener('click', () => openLightbox(img.src, img.alt));
-            gallery.appendChild(imgElement);
-        });
-    }
-
-    loadGallery();
-     window.loadGallery = loadGallery; // Make available for search
-}
-
-//Lightbox Functionality
-function initLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const closeBtn = document.getElementById('closeBtn');
-  
-
-    window.openLightbox = function(src, alt) {
-       lightboxImg.src = src;
-       lightboxImg.alt = alt;
-       lightbox.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-    };
-
-    closeBtn.add('click', ()=>{
-      lightbox.classList.add('hidden');
-      document.body.style.overflow ='';
-    });
-    
-    lightbox.addEventListener('', (e) => {
-      if (e.target === lightbox){
-        lightbox.classList.add('hidden');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-
-
-// Searching
-function initSearch(){
-  const searchInput = document.getElementById('searchInput');
-
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.trim();
-  loadGallery(query);
-
-  })
-}
-
-// Back to top button 
-function initBackToTop(){
-  const backToTopBtn = document.getElementById('backToTopBtn');
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300){
-      backToTopBtn.style.display = 'block';
+// Collection
+window.addEventListener('scroll', function() {
+ var backToTop = document.getElementById('backToTop');
+   if (window.pageYOffset > 300) {
+   backToTop.style.display = 'block';
     } else {
-      backToTopBtn.style.display = 'none';
+   backToTop.style.display = 'none';
+    }
+    });
+
+document.getElementById('backToTop').addEventListener('click', function() {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Mobile menu toggle
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+document.querySelector('.nav-menu').classList.toggle('show');
+ });
+// Mobile menu functionality
+document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+  const isExpanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !isExpanded);
+document.getElementById('navMenu').classList.toggle('active');
+ });
+
+// Mobile menu functionality
+ const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+ const navMenu = document.querySelector('.nav-menu');
+
+  mobileMenuToggle.addEventListener('click', () => {
+  const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+  mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+  navMenu.classList.toggle('active');
+  mobileMenuToggle.classList.toggle('open');
+   });
+
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.nav-menu a').forEach(link => {
+link.addEventListener('click', () => {
+   if (window.innerWidth <= 768) {
+     navMenu.classList.remove('active');
+     mobileMenuToggle.setAttribute('aria-expanded', 'false');
+     mobileMenuToggle.classList.remove('open');
+      }
+      });
+   });
+
+// Back to top button
+  window.addEventListener('scroll', function() {
+   var backToTop = document.getElementById('backToTop');
+    if (window.pageYOffset > 300) {
+     backToTop.style.display = 'block';
+     } else {
+     backToTop.style.display = 'none';
+     }
+   });
+
+document.getElementById('backToTop').addEventListener('click', function() {
+ window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+// Shopping Cart
+// Form validation
+ document.querySelector('.checkout-form').addEventListener('submit', function(e){
+  const inputs = this.querySelectorAll('input[required]');
+  let isValid = true;
+
+  inputs.forEach(input => {
+    if (!input.value.trim()) {
+      isValid = false;
+      input.style.borderColor = 'red';
+    } else {
+      input.style.borderColor = '#ddd';
     }
   });
 
-  backToTopBtn.addEventListener('click', () => {
-   window.scrollTo({ top: 0, behavior: 'smooth' });
-  })
-}
-
-// Form Validation for Contact & Enquiry
-function validateForm(formId) {
-    const form = document.getElementById(formId);
-    if (!form) return;
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        let isValid = true;
-   // field validation
-   form.querySelectorAll('[required]').forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.classList.add('error');
-            } else {
-                field.classList.remove('error');
-            }
-        });
-  // email validation
-        const email = form.querySelector('[type="email"]');
-        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-            isValid = false;
-            email.classList.add('error');
-        }
-    });
-}
+  if (!isValid) {
+    e.preventDefault();
+    alert('Please fill in all the required field')
+  }
+ });
  
-// Initialize form Validation
-document.addEventListener('DOMContentLoaded', function() {
-    validateForm('contactForm');
-    validateForm('enquiryForm');
-});
-// succesful validation message
- alert('Thank you! We will get in get in touch as soon as possible.')
- form.reset();
-  
-  
+
 

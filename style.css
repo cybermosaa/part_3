@@ -1593,6 +1593,23 @@ margin-left: 2rem;
             cursor: pointer;
             padding: 0.5rem;
     }
+@media (max-width: 1024px) {
+  .my-looks {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .my-looks {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-looks {
+    column-count: 1;
+  }
+}
         
  @media (max-width: 768px) {
 .nav-menu {
@@ -1622,19 +1639,19 @@ margin-left: 2rem;
    }
 
 .my-looks {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 10px;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
+   column-count: 4; /* Adjust based on screen size */
+  column-gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
    }
         
-.my-looks-items {
-     break-inside: avoid;
-     margin-bottom: 20px;
-    transition: transform 0.3s ease;
+.my-looks-items,
+.care-card {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  width: 100%;
  }
         
 .my-looks-items img {
@@ -1655,6 +1672,22 @@ margin-left: 2rem;
    text-align: center;
  }
   
+.care-card video {
+  aspect-ratio: 4 / 5;
+  
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.my-looks-items img,
+.my-looks-items video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px 8px 0 0;
+ }
 
 .page-header {
    text-align: center;

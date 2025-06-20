@@ -1,4 +1,4 @@
-/* HOMEPAGE */
+/* Home Page */
 :root {
     --primary-color: #2a5c45;
     --secondary-color: #e8c4a2;
@@ -1227,11 +1227,11 @@ padding: 0 1rem;
 
 /* checkout page */
 :root {
-    --primary-color: #2a5c45;       /* Dark green */
-    --secondary-color: #e8c4a2;     /* Light tan */
-    --accent-color: #d4a373;        /* Medium tan */
-    --light-text: #f8f9fa;          /* Off-white */
-    --dark-text: #212529;           /* Dark gray */
+    --primary-color: #2a5c45;      
+    --secondary-color: #e8c4a2; 
+    --accent-color: #d4a373;   
+    --light-text: #f8f9fa; 
+    --dark-text: #212529; 
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
         }
@@ -1621,7 +1621,6 @@ margin-left: 2rem;
   }
    }
 
-        /* ===== MASONRY LAYOUT STYLES ===== */
 .my-looks {
     display: grid;
     grid-gap: 20px;
@@ -1656,38 +1655,7 @@ margin-left: 2rem;
    text-align: center;
  }
   
-.video-container {
-    grid-column: 1 / -1;
-    margin: 40px 0;
-    text-align: center;
- }
-        
- .video-container h3 {
-  margin-bottom: 20px;
-  color: var(--primary-color);
-  font-size: 1.8rem;
- }
-        
-.video-wrapper {
-    position: relative;
-   padding-bottom: 56.25%; /* 16:9 aspect ratio */
-   height: 0;
-   overflow: hidden;
-   max-width: 800px;
-   margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: var(--box-shadow);
-  }
-        
-.video-wrapper iframe {
-  position: absolute;
-   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  }
-      
+
 .page-header {
    text-align: center;
    padding: 3rem 2rem;

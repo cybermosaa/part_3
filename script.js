@@ -99,12 +99,17 @@ document.getElementById("backToTop").addEventListener("click", function(){
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
+window.addEventListener("scroll", function () {
+  const btn = document.getElementById("backToTop");
+  btn.style.display = window.scrollY > 300 ? "block" : "none";
+});
 
 // Layout
 function resizeGridItem(item){
   const grid = document.querySelector(".my-looks");
   const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
   const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+  const contentHeight = item.querySelector("img, video")?.getBoundingClientRect().height || 0;
   const rowSpan = Math.ceil((item.querySelector('img').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
   item.style.gridRowEnd = "span " + rowSpan;
 
